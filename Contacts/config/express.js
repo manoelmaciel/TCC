@@ -4,7 +4,7 @@ const express = require('express');
 const home = require('../app/route/contacts.js');
 const app = express();
 
-// enviroment variables
+// enviroment variablesH
 app.set('host', 'localhost');
 app.set('port', 3003); // só muda o número da porta
 
