@@ -1,0 +1,16 @@
+{
+  "name": "contacts",
+  "version": "3.1.0",
+  "description": "MEAN TCC - 2017",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Manoel Braz Maciel",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.8.12",
+    "express": "^4.17.1"
+  }
+}

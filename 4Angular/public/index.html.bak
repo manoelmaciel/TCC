@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="contact">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Contacts</title>
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body class="container">
+
+  <div class="jumbotron">
+    <h2>Contacts</h2>
+  </div>
+
+  <div ng-view class="jumbotron">
+    <!-- renderização das partials -->
+    Versão 3.0
+  </div>
+
+  <footer class="jumbotron">
+    &copy; Manoel Braz Maciel - TCC MEAN - 2017
+  </footer>
+
+  <!-- scripts importados -->
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular-route/angular-route.min.js"></script>
+
+  <!-- scripts locais -->
+  
+</body>
+
+</html>
