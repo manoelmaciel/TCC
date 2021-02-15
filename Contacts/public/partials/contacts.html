@@ -1,0 +1,32 @@
+<!-- ./public/partials/contacts.html -->
+
+<div class="alert alert-success" ng-if="message.text && contacts.length">
+    {{ message.text }}
+  </div>
+  
+  <div class="alert alert-danger" ng-if="!contacts.length">
+    No contacts registered ... !
+  </div>
+  
+  <a href="#/contact" class="btn btn-primary">New contact</a>
+  <table class="table table-striped table-responsive">
+    <thead>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="contact in contacts">
+        <td>
+          <a href="#/contact/{{contact._id}}" title="Click to edit">{{contact.name}}</a>
+        </td>
+        <td>
+          <a href="#/contact/{{contact._id}}" title="Click to edit">{{contact.email}}</a>
+        </td>
+        <td>
+          <button class="btn btn-danger" ng-click="remove(contact)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="text-info" ng-show="contacts.length > 0">Total contacts: {{ contacts.length }}</p>

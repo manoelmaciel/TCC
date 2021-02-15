@@ -7,7 +7,7 @@ const app = express()
 
 // enviroment variablesH
 app.set('host', 'localhost');
-app.set('port', 3003); // só muda o número da porta
+app.set('port', 3004); // só muda o número da porta
 
 // middlewares
 app.use(express.static('./public'))
