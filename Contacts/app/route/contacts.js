@@ -10,7 +10,7 @@ app.route('/contacts')
 
   .get(controller.retrieveAll); // recupera todos os contatos
 
-app.route('/contacts/:id')
+app.route('/contacts/:_id')
 
   .get(controller.retrieveOne) // recupera um único contato pelo seu id
 

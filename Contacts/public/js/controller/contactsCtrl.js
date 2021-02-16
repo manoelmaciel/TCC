@@ -8,7 +8,7 @@ $scope.contacts = [];
 $scope.message = {};
 
 $scope.remove = function (contact) {
-var url = '/contacts/' + contact.id;
+var url = '/contacts/' + contact._id;
 $http.delete(url).then(loadContacts, error);
 }
 

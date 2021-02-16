@@ -18,10 +18,10 @@
     <tbody>
       <tr ng-repeat="contact in contacts">
         <td>
-          <a href="#/contact/{{contact.id}}" title="Click to edit">{{contact.name}}</a>
+          <a href="#/contact/{{contact._id}}" title="Click to edit">{{contact.name}}</a>
         </td>
         <td>
-          <a href="#/contact/{{contact.id}}" title="Click to edit">{{contact.email}}</a>
+          <a href="#/contact/{{contact._id}}" title="Click to edit">{{contact.email}}</a>
         </td>
         <td>
           <button class="btn btn-danger" ng-click="remove(contact)">Delete</button>

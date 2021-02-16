@@ -8,6 +8,8 @@ angular.module('contact')
     $scope.operation = 'Editing an existing contact ...';
 
     var init = function (id) {
+        // console.log('Init')
+        // console.log(id)
       var url = '/contacts/' + id;
       if (id) $http.get(url).then(success, error);
       else 
@@ -22,7 +24,7 @@ angular.module('contact')
     }
 
     $scope.salvar = function (contact) {
-      if (!contact.id) {
+      if (!contact._id) {
         criarNovoContato(contact);
       } else {
         atualizarContato(contact);
@@ -35,7 +37,7 @@ angular.module('contact')
     };
 
     const atualizarContato = function (contact) {
-      var url = '/contacts/' + contact.id;
+      var url = '/contacts/' + contact._id;
 
       $http.put(url, contact).then(listar, error);
     };

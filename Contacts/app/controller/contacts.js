@@ -1,79 +1,63 @@
 // ./app/controller/contacts.js
 
-module.exports = () => {
+module.exports = function () {
 
-  var contacts = require('../model/contacts');
-  var id = contacts.length;
+  const Contact = require('../model/contact')();
+
   var controller = {};
 
-  controller.create = function (req, res, next) {
+  controller.create = function (req, res) {
+    var contact = new Contact();
 
-    var newContact = {};
+    contact.name = req.body.name;
+    contact.email = req.body.email;
 
-    newContact.id = ++id;
-    newContact.name = req.body.name;
-    newContact.email = req.body.email;
-    contacts.push(newContact);
-    res.statusCode = 201;
-
-    res.send('Contact created ... Successfully!').end();
-
-  }
-
-  controller.retrieveAll = function (req, res, next) {
-    res.statusCode = 200;
-    res.json(contacts);
-  }
-
-  controller.retrieveOne = (req, res, next) => {
-    var idContact = req.params.id;
-    var contact = contacts.filter(function (contact) {
-      return idContact == contact.id;
-    })[0];
-    if (contact) {
-      res.statusCode = 200;
-      res.json(contact);
-      res.end();
-    } else {
-      res.statusCode = 404;
-      res.end(`Contact ${idContact} not found ... !`);
-    }
-  }
-
-  controller.update = (req, res, next) => {
-    var idContact = req.params.id;
-    var contactExists = contacts.filter(function (contact) {
-      return idContact == contact.id;
-    })[0];
-    if (contactExists) {
-      var contact = req.body;
-      contact.id = req.params.id;
-      contacts = contacts.map(function (contactMapped) {
-      if (contactMapped.id == contact.id) {
-        contactMapped.name = contact.name;
-        contactMapped.email = contact.email;
-      }
-      return contactMapped;
+    contact.save(function (error) {
+      if (error)
+        res.send(error);
+      res.json({ message: 'Contact criado com sucesso ... !' });
     });
-    res.statusCode = 200;
-    res.send('Contact updated successfully ... !').end();
-    } else {
-      res.statusCode = 404;
-      res.end('Contact not found ... !');
-    }
-  }
-
-  controller.delete = (req, res, next) => {
-    var idContact = req.params.id;
-    contacts = contacts.filter(function (contactFiltered) {
-      return idContact != contactFiltered.id;
-    });
-    res.statusCode = 200;
-    res.send(`Contact ${idContact} deleted successfully ... !`).end();
   };
+
+  controller.retrieveAll = function (req, res) {
+
+    Contact.find(function (err, contacts) {
+      if (err)
+        res.send(err);
+      res.json(contacts);
+    });
+
+  };
+
+  controller.retrieveOne = function (req, res) {
+    Contact.findById(req.params._id, function (error, contact) {
+      if (error) res.send(error);
+      res.json(contact);
+    });
+  };
+
+  controller.update = function (req, res) {
+
+    Contact.findById(req.params._id, function (error, contact) {
+      if (error) res.send(error);
+      contact.name = req.body.name;
+      contact.email = req.body.email;
+      contact.save(function (error) {
+        if (error) res.send(error);
+        res.json({ message: 'Contato atualizado com sucesso ... !' });
+      });
+    });
+  };
+
+  controller.delete = function (req, res) {
+    Contact.remove({
+      _id: req.params._id
+    }, function (error) {
+      if (error) res.send(error);
+      res.json({ message: 'Contato excluído com sucesso ... !' });
+    });
+  }
 
   return controller;
 
 }
-
-
