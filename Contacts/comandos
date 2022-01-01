@@ -1,0 +1,147 @@
+31/12/2021 - 22:09 
+
+  Gerais ...
+
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ yarn start
+yarn run v1.22.17
+$ nodemon server.js
+/bin/sh: 1: nodemon: not found
+error Command failed with exit code 127.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ yarn install -g nodemon
+yarn install v1.22.17
+error `--global` has been deprecated. Please run "yarn global add nodemon" instead.
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ yarn global add nodemon
+yarn global v1.22.17
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Installed "nodemon@2.0.15" with binaries:
+      - nodemon
+Done in 7.99s.
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ yarn start
+yarn run v1.22.17
+$ nodemon server.js
+[nodemon] 2.0.15
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+WARNING: The `useMongoClient` option is no longer necessary in mongoose 5.x, please remove it.
+    at handleUseMongoClient (/home/manoel/Desktop/estudos/projetos/tcc/_1/TCC/Contacts/node_modules/mongoose/lib/connection.js:1006:17)
+    at NativeConnection.Connection.openUri (/home/manoel/Desktop/estudos/projetos/tcc/_1/TCC/Contacts/node_modules/mongoose/lib/connection.js:773:7)
+    at /home/manoel/Desktop/estudos/projetos/tcc/_1/TCC/Contacts/node_modules/mongoose/lib/index.js:345:10
+    at /home/manoel/Desktop/estudos/projetos/tcc/_1/TCC/Contacts/node_modules/mongoose/lib/helpers/promiseOrCallback.js:31:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (/home/manoel/Desktop/estudos/projetos/tcc/_1/TCC/Contacts/node_modules/mongoose/lib/helpers/promiseOrCallback.js:30:10)
+    at Mongoose._promiseOrCallback (/home/manoel/Desktop/estudos/projetos/tcc/_1/TCC/Contacts/node_modules/mongoose/lib/index.js:1135:10)
+    at Mongoose.connect (/home/manoel/Desktop/estudos/projetos/tcc/_1/TCC/Contacts/node_modules/mongoose/lib/index.js:344:20)
+    at module.exports (/home/manoel/Desktop/estudos/projetos/tcc/_1/TCC/Contacts/config/dbMongo.js:6:12)
+    at Object.<anonymous> (/home/manoel/Desktop/estudos/projetos/tcc/_1/TCC/Contacts/server.js:6:31)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)
+    at internal/main/run_main_module.js:17:47
+(node:40009) Warning: Accessing non-existent property 'MongoError' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:40009) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:40009) DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+Servidor ... Respondendo em: localhost: 3005!
+Mongoose! conectado em mongodb://localhost:27017/contact
+(node:40009) DeprecationWarning: Listening to events on the Db class has been deprecated and will be removed in the next major version.
+(node:40009) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ Mongoose! desconectado de mongodb://localhost:27017/contact
+Mongoose! desconectado pelo termino da aplicação
+
+
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ 
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+
+31/12/2021 - 22:08 
+
+  Git
+
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ git status
+No ramo main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (utilize "git add <arquivo>..." para atualizar o que será submetido)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   ../2Express/public/index.html
+	modified:   notes
+
+nenhuma modificação adicionada à submissão (utilize "git add" e/ou "git commit -a")
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ git add .
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ git status
+No ramo main
+Your branch is up to date with 'origin/main'.
+
+Mudanças a serem submetidas:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   notes
+
+Changes not staged for commit:
+  (utilize "git add <arquivo>..." para atualizar o que será submetido)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   ../2Express/public/index.html
+
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ git add .
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ git status
+No ramo main
+Your branch is up to date with 'origin/main'.
+
+Mudanças a serem submetidas:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   notes
+
+Changes not staged for commit:
+  (utilize "git add <arquivo>..." para atualizar o que será submetido)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   ../2Express/public/index.html
+
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ git add ../2Exress/public/index.html
+fatal: pathspec '../2Exress/public/index.html' não encontrou nenhum arquivo
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ git add ../2Express/public/index.html
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ git status
+No ramo main
+Your branch is up to date with 'origin/main'.
+
+Mudanças a serem submetidas:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   ../2Express/public/index.html
+	modified:   notes
+
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ git commit -m "Uma visita ... De fim de ano!"
+[main 16551f9] Uma visita ... De fim de ano!
+ 2 files changed, 20 insertions(+), 3 deletions(-)
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ git push origin
+Username for 'https://github.com': manoelmaciel
+Password for 'https://manoelmaciel@github.com': 
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/manoelmaciel/TCC.git/'
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ git push origin
+Username for 'https://github.com': manoelmaciel
+Password for 'https://manoelmaciel@github.com': 
+To https://github.com/manoelmaciel/TCC.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/manoelmaciel/TCC.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+manoel@worknote:~/Desktop/estudos/projetos/tcc/_1/TCC/Contacts$ 
+
+  Não quis atualizar o repositório remoto ... Pelos motivos acima expostos!
+
